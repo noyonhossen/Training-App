@@ -21,9 +21,9 @@ namespace Training.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            var data = await _studentService.GetAllStudentAsync();
+            var students = await _studentService.GetAllStudentAsync();
 
-            return Ok(data);
+            return Ok(students);
         }
 
         [HttpGet("{id}")]

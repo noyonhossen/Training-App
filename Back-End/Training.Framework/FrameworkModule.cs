@@ -33,6 +33,15 @@ namespace Training.Framework
             builder.RegisterType<StudentService>().As<IStudentService>()
                 .InstancePerLifetimeScope();
 
+            builder.RegisterType<CourseRepository>().As<ICourseRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<CourseUnitOfWork>().As<ICourseUnitOfWork>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<CourseService>().As<ICourseService>()
+                .InstancePerLifetimeScope();
+
             base.Load(builder);
         }
     }
