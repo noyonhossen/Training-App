@@ -8,8 +8,4 @@
     <ProjectReference Include="..\Training.Data\Training.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
