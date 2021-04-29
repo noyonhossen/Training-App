@@ -24,5 +24,9 @@
     <ProjectReference Include="..\..\Training.Framework\Training.Framework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 
 </Project>
