@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Training.Data;
 
 namespace Training.Framework.Entities
@@ -11,5 +9,6 @@ namespace Training.Framework.Entities
         public string Title { get; set; }
         public int SeatCount { get; set; }
         public int Fee { get; set; }
+        public IList<StudentRegistration> StudentRegistration { get; set; }
     }
 }
