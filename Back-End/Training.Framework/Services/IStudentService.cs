@@ -12,6 +12,6 @@ namespace Training.Framework.Services
         Task<Student> GetStudentByIdAsync(int id);
         Task UpdateAsync(Student student);
         Task AddAsync(Student student);
-        Task DeleteAsync(int id);
+        Task<Student> DeleteAsync(int id);
     }
 }

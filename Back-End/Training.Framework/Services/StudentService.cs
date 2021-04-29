@@ -45,12 +45,14 @@ namespace Training.Framework.Services
             await _studentUnitOfWork.SaveAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<Student> DeleteAsync(int id)
         {
             var student = await GetStudentByIdAsync(id);
             if (student == null) throw new Exception("No student found");
             await _studentUnitOfWork.StudentRepository.RemoveAsync(id);
             await _studentUnitOfWork.SaveAsync();
+
+            return student;
         }
     }
 }
