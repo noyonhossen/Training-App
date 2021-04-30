@@ -1,1 +1,20 @@
-<p>add-student works!</p>
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <!-- <input type="hidden" name="Id"
+    [value]="service.formData.Id"> -->
+    <div class="form-group">
+        <label for="">Student Name</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Enter Student Name"
+            name="Name" #Name="ngModel" [(ngModel)] = "service.formData.Name"
+            required [class.invalid]="Name.invalid && Name.touched">
+    </div>
+    <div class="form-group">
+        <label for="">Date of Birth</label>
+        <input type="date" class="form-control form-control-lg"
+            name="DateOfBirth" #DateOfBirth="ngModel" [(ngModel)] = "service.formData.DateOfBirth"
+            required [class.invalid]="DateOfBirth.invalid && DateOfBirth.touched">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+    </div>
+</form>
+
