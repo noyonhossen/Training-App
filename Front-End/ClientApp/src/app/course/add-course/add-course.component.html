@@ -1,1 +1,32 @@
-<p>add-course works!</p>
+<div class="row m-md-3">
+    <div class="card col-md-6">
+    <div class="card-header">
+      Add Course
+    </div>
+    <div class="card-body">
+        <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <label for="">Course title</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Enter Course Title"
+                    name="title" #title="ngModel" [(ngModel)] = "service.formData.title"
+                    required [class.invalid]="title.invalid && title.touched">
+            </div>
+            <div class="form-group">
+                <label for="">Total Seat</label>
+                <input type="number" class="form-control form-control-lg"
+                    name="seatCount" #seatCount="ngModel" [(ngModel)] = "service.formData.seatCount"
+                    required [class.invalid]="seatCount.invalid && seatCount.touched">
+            </div>
+            <div class="form-group">
+                <label for="">Fee</label>
+                <input type="number" class="form-control form-control-lg"
+                    name="fee" #fee="ngModel" [(ngModel)] = "service.formData.fee"
+                    required [class.invalid]="fee.invalid && fee.touched">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
