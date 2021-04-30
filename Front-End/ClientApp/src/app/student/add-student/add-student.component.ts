@@ -12,41 +12,20 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddStudentComponent implements OnInit {
 
-  
   constructor(public service:StudentService,private toastr: ToastrService) { }
-
-  
 
   ngOnInit(): void {
   }
 
   onSubmit(form: NgForm){
-    if(this.service.formData.Id==0){
-      this.insertRecord(form);
-    }
-    else{
-      this.updateRecord(form);
-    }
+    this.insertRecord(form);
   }
 
   insertRecord(form: NgForm){
     this.service.postPaymentDetail().subscribe(
       next=>{
         this.resetForm(form);
-        this.toastr.success('Submitted successfully','Student Added')
-      },
-      error=>{
-        console.log(error);
-      }
-    );
-  }
-
-  updateRecord(form: NgForm){
-    this.service.putPaymentDetail().subscribe(
-      next=>{
-        this.resetForm(form);
-        this.service.refreshList();
-        this.toastr.info('Updated successfully','Student Info Updated')
+        this.toastr.success('Submitted successfully','Student Added successfully')
       },
       error=>{
         console.log(error);
