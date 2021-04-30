@@ -20,10 +20,10 @@
                         <td>{{student.name}}</td>
                         <td>{{student.dateOfBirth}}</td>
                         <td>
-                            <i class="fas fa-lg fa-edit text-info cursor" [routerLink]="['/edit-student']" title="Edit"></i>
+                            <i class="fas fa-lg fa-edit text-info cursor" [routerLink]="['/edit-student',student.id]" title="Edit"></i>
                         </td>
                         <td>
-                            <i class="fa fa-trash fa-lg text-danger cursor" (click)="onDelete(student.Id)" title="Delete"></i>
+                            <i class="fa fa-trash fa-lg text-danger cursor" (click)="onDelete(student.id)" title="Delete"></i>
                         </td>
                     </tr>
                 </tbody>

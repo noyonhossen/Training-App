@@ -22,7 +22,7 @@ export class AddStudentComponent implements OnInit {
   }
 
   insertRecord(form: NgForm){
-    this.service.postPaymentDetail().subscribe(
+    this.service.postStudent().subscribe(
       next=>{
         this.resetForm(form);
         this.toastr.success('Submitted successfully','Student Added successfully')

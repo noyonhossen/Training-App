@@ -16,15 +16,15 @@ export class StudentService {
   formData:Student= new Student();
   list:Student[];
 
-  postPaymentDetail(){
+  postStudent(){
     return this.http.post(this.baseUrl,this.formData);
   }
 
-  putPaymentDetail(){
+  putStudent(){
     return this.http.put(`${this.baseUrl}/${this.formData.id}`,this.formData);
   }
 
-  deletePaymentDetail(id:number){
+  deleteStudent(id:number){
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 

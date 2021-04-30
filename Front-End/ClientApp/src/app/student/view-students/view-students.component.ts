@@ -13,6 +13,10 @@ export class ViewStudentsComponent implements OnInit {
   students: Student[];
 
   constructor(public service: StudentService,private toastr: ToastrService) {
+    this.getStudents();
+  }
+
+  getStudents(){
     this.service.getStudents().subscribe({
       next: students=>{
           this.students = students;
@@ -23,6 +27,21 @@ export class ViewStudentsComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  onDelete(id:number)
+  {
+    if(confirm('Are you sure to delete thid record?')){
+      this.service.deleteStudent(id).subscribe(
+        next=>{
+          this.getStudents();
+          this.toastr.error('Delete successfully','Student deleted successfully')
+        },
+        error=>{
+          console.log(error);
+        }
+      );
+    }
   }
 
 }
