@@ -29,9 +29,6 @@ namespace Training.Framework.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<StudentRegistration>()
-                .HasKey(pc => new { pc.StudentId, pc.CourseId });
-
-            modelBuilder.Entity<StudentRegistration>()
                 .HasOne(pc => pc.Student)
                 .WithMany(p => p.StudentRegistration)
                 .HasForeignKey(pc => pc.StudentId);
@@ -46,5 +43,6 @@ namespace Training.Framework.Contexts
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<StudentRegistration> StudentRegistrations { get; set; }
     }
 }

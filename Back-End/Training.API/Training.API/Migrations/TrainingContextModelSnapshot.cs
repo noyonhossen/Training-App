@@ -60,8 +60,10 @@ namespace Training.API.Migrations
 
             modelBuilder.Entity("Training.Framework.Entities.StudentRegistration", b =>
                 {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
@@ -69,17 +71,19 @@ namespace Training.API.Migrations
                     b.Property<DateTime>("EnrollDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsPaymentComplete")
                         .HasColumnType("bit");
 
-                    b.HasKey("StudentId", "CourseId");
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("StudentRegistration");
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("StudentRegistrations");
                 });
 
             modelBuilder.Entity("Training.Framework.Entities.StudentRegistration", b =>
