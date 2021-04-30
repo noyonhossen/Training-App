@@ -51,11 +51,18 @@ namespace Training.API
             services.AddControllers();
             // Autofac options
             services.AddOptions();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options =>
+            options.WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            );
             AutofacContainer = app.ApplicationServices.GetAutofacRoot();
 
             if (env.IsDevelopment())

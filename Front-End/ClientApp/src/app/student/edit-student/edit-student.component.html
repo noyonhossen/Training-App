@@ -1,0 +1,26 @@
+<div class="row m-md-3">
+    <div class="card col-md-6">
+    <div class="card-header">
+      Edit Student
+    </div>
+    <div class="card-body">
+        <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <label for="">Student Name</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Enter Student Name"
+                    name="name" #name="ngModel" [(ngModel)] = "service.formData.name"
+                    required [class.invalid]="name.invalid && name.touched">
+            </div>
+            <div class="form-group">
+                <label for="">Date of Birth</label>
+                <input type="date" class="form-control form-control-lg"
+                    name="dateOfBirth" #dateOfBirth="ngModel" [(ngModel)] = "service.formData.dateOfBirth"
+                    required [class.invalid]="dateOfBirth.invalid && dateOfBirth.touched">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>

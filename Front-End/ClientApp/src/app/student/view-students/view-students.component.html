@@ -1,0 +1,34 @@
+<div class="row m-md-3">
+    <div class="card col-md-6">
+        <div class="card-header">
+          Students
+        </div>
+        <div class="card-body">
+            <table class="table" *ngIf='students && students.length'>
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date Of Birth</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students">
+                        <td>{{student.id}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.dateOfBirth}}</td>
+                        <td>
+                            <i class="fas fa-lg fa-edit text-info cursor" [routerLink]="['/edit-student',student.id]" title="Edit"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash fa-lg text-danger cursor" (click)="onDelete(student.id)" title="Delete"></i>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
