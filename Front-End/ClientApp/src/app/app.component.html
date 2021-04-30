@@ -41,7 +41,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-header">Student</li>
           <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="" class="nav-link" [routerLink]="['/view-students']">
                   <i class="nav-icon fas fa-users"></i>
                   <p>
                       View Students
@@ -50,7 +50,7 @@
           </li>
 
           <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="" class="nav-link" [routerLink]="['/add-student']">
                   <i class="nav-icon fas fa-user-plus"></i>
                   <p>
                       Add Student
@@ -61,7 +61,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-header">Course</li>
           <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="" class="nav-link" [routerLink]="['/view-courses']">
                   <i class="nav-icon fas fa-book-open"></i>
                   <p>
                       View Courses
@@ -70,7 +70,7 @@
           </li>
 
           <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="" class="nav-link" [routerLink]="['/add-course']">
                   <i class="nav-icon fas fa-book-medical"></i>
                   <p>
                       Add Course
@@ -81,7 +81,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-header">Enrollment</li>
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="" class="nav-link" [routerLink]="['/view-registrations']">
                 <i class="nav-icon fas fa-university"></i>
                 <p>
                     View Enrollments
@@ -90,7 +90,7 @@
         </li>
 
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="" class="nav-link" [routerLink]="['/register']">
                 <i class="nav-icon fas fa-user-edit"></i>
                 <p>
                     Add Enrollment
@@ -105,8 +105,8 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-
+  <div class="content-wrapper p-1">
+    <router-outlet></router-outlet>
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -121,5 +121,3 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
-<router-outlet></router-outlet>
