@@ -1,1 +1,36 @@
-<p>view-courses works!</p>
+<div class="row m-md-3">
+    <div class="card col-md-6">
+        <div class="card-header">
+          Courses
+        </div>
+        <div class="card-body">
+            <table class="table" *ngIf='courses && courses.length'>
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Total Seat</th>
+                    <th scope="col">Fee</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let course of courses">
+                        <td>{{course.id}}</td>
+                        <td>{{course.title}}</td>
+                        <td>{{course.seatCount}}</td>
+                        <td>{{course.fee}}</td>
+                        <td>
+                            <i class="fas fa-lg fa-edit text-info cursor" [routerLink]="['/edit-course',courses.id]" title="Edit"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash fa-lg text-danger cursor" (click)="onDelete(course.id)" title="Delete"></i>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
