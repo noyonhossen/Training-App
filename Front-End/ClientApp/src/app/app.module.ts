@@ -9,19 +9,21 @@ import { StudentModule } from './student/student.module';
 import { CourseModule } from './course/course.module';
 import { EnrollmentModule } from './enrollment/enrollment.module';
 import { ViewRegistrationsComponent } from './enrollment/view-registrations/view-registrations.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path:'view-registrations',component:ViewRegistrationsComponent},
-      {path:'',redirectTo:'view-registrations',pathMatch:'full'},
-      {path:'**',redirectTo:'view-registrations',pathMatch:'full'}
+      {path:'dashboard',component:DashboardComponent},
+      {path:'',redirectTo:'dashboard',pathMatch:'full'},
+      {path:'**',redirectTo:'dashboard',pathMatch:'full'}
     ]),
     StudentModule,
     CourseModule,

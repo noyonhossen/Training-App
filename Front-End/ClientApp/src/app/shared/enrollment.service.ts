@@ -12,7 +12,7 @@ import { Course } from './course.model';
   providedIn: 'root'
 })
 export class EnrollmentService {
-  readonly baseUrl = 'https://www.trainingapp.somee.com/api/StudentRegistration';
+  readonly baseUrl = 'https://trainingclientapp.web.app/api/StudentRegistration';
   constructor(private http:HttpClient,
     public studentService:StudentService,
     public courseService:CourseService) {
@@ -77,5 +77,10 @@ export class EnrollmentService {
       }
       console.error(errorMessage);
       return throwError(errorMessage);
+  }
+
+  refreshList(){
+    this.getStudents();
+    this.getCourses();
   }
 }

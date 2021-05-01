@@ -1,13 +1,12 @@
-<div class="row m-md-3">
-    <div class="card col-md-6">
+<div class="row m-lg-3">
+    <div class="card col-lg-6">
         <div class="card-header">
           Enrollments
         </div>
         <div class="card-body">
-            <table class="table" *ngIf='enrollments && enrollments.length'>
+            <table class="table table-responsive" *ngIf='enrollments && enrollments.length'>
                 <thead>
                   <tr>
-                    <th scope="col">Id</th>
                     <th scope="col">Student Id</th>
                     <th scope="col">Course Id</th>
                     <th scope="col">Enroll Date</th>
@@ -18,7 +17,6 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let enrollment of enrollments">
-                        <td>{{enrollment.id}}</td>
                         <td>{{enrollment.studentId}}</td>
                         <td>{{enrollment.courseId}}</td>
                         <td>{{enrollment.enrollDate}}</td>

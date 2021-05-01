@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
      }
 
   ngOnInit(): void {
-    
+    this.service.refreshList();
   }
 
   onSubmit(form: NgForm){
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       next=>{
         this.resetForm(form);
         this.toastr.success('Submitted successfully','Enroll successfully');
-        this.router.navigate(['\view-registrations']);
+        this.router.navigate(['/view-registrations']);
       },
       error=>{
         console.log(error);
