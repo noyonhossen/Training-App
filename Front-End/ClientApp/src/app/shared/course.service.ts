@@ -9,7 +9,7 @@ import { catchError,tap } from "rxjs/operators";
   providedIn: 'root'
 })
 export class CourseService {
-  readonly baseUrl = 'https://trainingclientapp.web.app/api/Course';
+  readonly baseUrl = 'https://www.trainingapp.somee.com/api/Course';
   constructor(private http:HttpClient) { }
 
   formData:Course= new Course();

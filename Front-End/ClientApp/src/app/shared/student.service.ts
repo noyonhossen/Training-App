@@ -10,7 +10,7 @@ import { catchError,tap } from "rxjs/operators";
 })
 export class StudentService {
 
-  readonly baseUrl = 'https://trainingclientapp.web.app/api/Student';
+  readonly baseUrl = 'https://www.trainingapp.somee.com/api/Student';
   constructor(private http:HttpClient) { }
 
   formData:Student= new Student();
