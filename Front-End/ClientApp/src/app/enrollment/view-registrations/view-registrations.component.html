@@ -1,1 +1,38 @@
-<p>view-registrations works!</p>
+<div class="row m-md-3">
+    <div class="card col-md-6">
+        <div class="card-header">
+          Enrollments
+        </div>
+        <div class="card-body">
+            <table class="table" *ngIf='enrollments && enrollments.length'>
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Student Id</th>
+                    <th scope="col">Course Id</th>
+                    <th scope="col">Enroll Date</th>
+                    <th scope="col">Payment Completed</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let enrollment of enrollments">
+                        <td>{{enrollment.id}}</td>
+                        <td>{{enrollment.studentId}}</td>
+                        <td>{{enrollment.courseId}}</td>
+                        <td>{{enrollment.enrollDate}}</td>
+                        <td>{{enrollment.isPaymentComplete?'Yes':'No'}}</td>
+                        <td>
+                            <i class="fas fa-lg fa-edit text-info cursor" [routerLink]="['/edit-registration',enrollment.id]" title="Edit"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash fa-lg text-danger cursor" (click)="onDelete(enrollment.id)" title="Delete"></i>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
