@@ -3,6 +3,7 @@ import { CourseService } from 'src/app/shared/course.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { Course } from 'src/app/shared/course.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-course',
@@ -11,7 +12,8 @@ import { Course } from 'src/app/shared/course.model';
 })
 export class AddCourseComponent implements OnInit {
 
-  constructor(public service:CourseService,private toastr: ToastrService) { }
+  constructor(public service:CourseService,private toastr: ToastrService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +27,7 @@ export class AddCourseComponent implements OnInit {
       next=>{
         this.resetForm(form);
         this.toastr.success('Submitted successfully','Course Added successfully')
+        this.router.navigate(['/view-courses']);
       },
       error=>{
         console.log(error);

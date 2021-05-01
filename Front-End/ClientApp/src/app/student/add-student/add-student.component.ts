@@ -4,6 +4,7 @@ import { Student } from 'src/app/shared/student.model';
 import { StudentService } from 'src/app/shared/student.service';
 
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-student',
@@ -12,7 +13,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddStudentComponent implements OnInit {
 
-  constructor(public service:StudentService,private toastr: ToastrService) { }
+  constructor(public service:StudentService,private toastr: ToastrService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +27,8 @@ export class AddStudentComponent implements OnInit {
     this.service.postStudent().subscribe(
       next=>{
         this.resetForm(form);
-        this.toastr.success('Submitted successfully','Student Added successfully')
+        this.toastr.success('Submitted successfully','Student Added successfully');
+        this.router.navigate(['/view-students']);
       },
       error=>{
         console.log(error);
